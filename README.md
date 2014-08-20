@@ -6,7 +6,7 @@ Bitters helps designers start projects faster by defining a basic set of Sass va
 
 Bitters is made to work alongside a CSS reset and not replace it. Our suggested reset is [Normalize](http://necolas.github.io/normalize.css).
 
-This fork extends original Bitters to be instantly includable and overridable in an existing Rails project.
+This fork extends original Bitters to be instantly includable and overridable in an existing Rails project, without having to run `bitters install` and check in the resulting `base` directory into your version control.
 
 ## Requirements
 
