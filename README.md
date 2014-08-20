@@ -6,6 +6,8 @@ Bitters helps designers start projects faster by defining a basic set of Sass va
 
 Bitters is made to work alongside a CSS reset and not replace it. Our suggested reset is [Normalize](http://necolas.github.io/normalize.css).
 
+This fork extends original Bitters to be instantly includable and overridable in an existing Rails project.
+
 ## Requirements
 
 - Sass 3.0+
@@ -16,56 +18,29 @@ Bitters is made to work alongside a CSS reset and not replace it. Our suggested 
 
 :warning: **Ruby 1.9.3 or higher** is required to install Bitters from the command line.
 
-1. Install Bitters:
+1. Install Bitters and Bourbon in your Gemfile:
 
   ```bash
-  gem install bitters
+  # Styles
+  gem 'bourbon', '>= 4.0.0'
+  gem 'bitters', :git => 'https://github.com/soundasleep/bitters.git'
   ```
 
-  *If you use [rbenv](https://github.com/sstephenson/rbenv), be sure to run `rbenv rehash` without any errors.*
+2. Run `bundle install` or `bundle update`
 
-2. Install [Bourbon](https://github.com/thoughtbot/bourbon#installation-for-rails-31) (required) and [Neat](https://github.com/thoughtbot/neat#install-instructions) (optional).
-
-3. `cd` to your Sass directory and run:
-
-  ```bash
-  bitters install
-  ```
-
-  A `base` directory will be generated which contains all of the Bitters files.
-
-4. Import Bitters after Bourbon in your `application.css.scss` or main manifest file. All additional stylesheets should be imported below Bitters.
-
-  ```bash
-  @import "bourbon";
-  @import "base/base";
-  ```
-
-5. When using Neat, uncomment the following line in `_base.scss`:
-
-  ```scss
-  @import "grid-settings";
-  ```
-
-  And import Neat after Bitters:
+3. Import Bitters after Bourbon in your `application.css.scss` or main manifest file. All additional stylesheets should be imported below Bitters.
 
   ```scss
   @import "bourbon";
-  @import "base/base";
-  @import "neat";
-
-  // All other imports
+  @import "base";
   ```
 
-  If you want to use Neat functions in Bitters, you can `@import "grid-settings";` before Neat, remove `@import "grid-settings";` from `_base.scss` and import the rest of bitters after. For example:
+4. Override Bitters variables as necessary:
 
   ```scss
   @import "bourbon";
-  @import "base/grid-settings";
-  @import "neat";
-  @import "base/base";
-
-  // All other imports
+  $sans-serif: $georgia;    // override
+  @import "base";
   ```
 
 ## Using Bitters
