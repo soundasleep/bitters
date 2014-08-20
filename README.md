@@ -32,15 +32,15 @@ This fork extends original Bitters to be instantly includable and overridable in
 
   ```scss
   @import "bourbon";
-  @import "base";
+  @import "bitters";
   ```
 
 4. Override Bitters variables as necessary:
 
   ```scss
   @import "bourbon";
-  $sans-serif: $georgia;    // override
-  @import "base";
+  $blue: #275DAA;    // override
+  @import "bitters";
   ```
 
 ## Using Bitters
